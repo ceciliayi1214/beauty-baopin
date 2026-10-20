@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>美妆行业 CID 爆品选品库 · V1.0</title>
-<style>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>本美选品库</title><style>
 :root{
   --ink:#2d2a26; --sub:#6b6b6b; --line:#eeebe3; --bg:#faf9f5; --card:#ffffff;
   --gold:#b89968; --gold-bg:#f8efe2; --gold-line:#e9d7bd;
@@ -13,259 +10,124 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f3f0e9;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
-main{width:100%;max-width:1180px;margin:0 auto;background:var(--bg);min-height:100vh;overflow-y:scroll;scrollbar-gutter:stable}
+main{width:100%;max-width:1180px;margin:0 auto;background:var(--bg);min-height:100vh}
 
-/* Banner */
 .banner{background:linear-gradient(135deg,#f0ead8 0%,#e8e2d0 45%,#ddd5bf 100%);padding:34px 44px 30px;position:relative;overflow:hidden}
 .banner::before{content:"";position:absolute;top:-50%;right:-8%;width:340px;height:340px;background:radial-gradient(circle,rgba(255,255,255,.4),transparent 65%);border-radius:50%}
 .banner .tt{display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative}
-.banner h1{font-size:34px;font-weight:800;letter-spacing:-.01em}
+.banner h1{font-size:32px;font-weight:800;letter-spacing:-.01em}
 .banner .tag{display:inline-flex;align-items:center;gap:6px;padding:4px 13px;font-size:13px;color:#8a6a2a;background:rgba(255,255,255,.55);border:1px solid rgba(184,153,104,.4);border-radius:20px;font-weight:600}
 .banner .sub{margin-top:10px;font-size:15px;color:#6e6553;position:relative;line-height:1.7}
 .gold-line{width:48px;height:2px;background:linear-gradient(90deg,#b89968,#d4c39d,#b89968);border-radius:2px;margin:10px 0 0}
 
-/* 概览 */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:22px 44px 4px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
 .stat .ic{width:38px;height:38px;border-radius:10px;background:var(--gold-bg);display:flex;align-items:center;justify-content:center;font-size:19px;flex:none}
 .stat .lb{font-size:13px;color:var(--sub);font-weight:600}
 .stat .vl{font-size:24px;font-weight:800;margin-top:3px;line-height:1.15}
 .stat .vl small{font-size:13px;font-weight:600;color:var(--sub);margin-left:3px}
-.stat .ex{font-size:12px;color:#9c9995;margin-top:4px;line-height:1.5}
+.stat .ex{font-size:12px;color:#9c9995;margin-top:2px}
 
-section{padding:26px 44px}
-.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
-.sec-head h2{font-size:21px;font-weight:800}
-.sec-head .hint{font-size:13px;color:var(--sub)}
-.sec-head .cnt{font-size:13px;color:var(--rose-t);font-weight:700}
+.l1{display:flex;gap:10px;padding:20px 44px 0}
+.l1 button{flex:1;padding:14px 16px;border:1px solid var(--line);background:var(--card);border-radius:14px;cursor:pointer;text-align:left;font-family:inherit;transition:all .2s}
+.l1 button:hover{box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.l1 button.on{border-width:2px}
+.l1 button.on.g{border-color:var(--gold);background:var(--gold-bg)}
+.l1 button.on.r{border-color:var(--rose-t);background:var(--rose-bg)}
+.l1 .n{font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px}
+.l1 .d{font-size:12px;color:var(--sub);margin-top:4px}
 
-/* 类目卡 */
-.dists{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
-.dist{background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 8px;text-align:center;cursor:pointer;transition:.2s}
-.dist:hover{background:#fff;border-color:var(--rose-t);box-shadow:0 3px 10px rgba(200,130,150,.16);transform:translateY(-2px)}
-.dist.on{background:var(--rose-bg);border-color:var(--rose)}
-.dist .em{font-size:18px}
-.dist .nm{font-size:12px;color:#5c5a56;font-weight:600;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dist .nu{font-size:14px;color:var(--rose);font-weight:800;margin-top:4px}
-.dist .nu i{font-style:normal;font-size:10px;color:#9c9995;font-weight:400;margin:0 2px}
-.dist .pc{font-size:10px;color:#9c9995}
-.dist .bar{height:3px;background:#f0ede5;border-radius:2px;margin-top:6px;overflow:hidden}
-.dist .bar i{display:block;height:100%;background:linear-gradient(90deg,#c98aa0,#9c5a6a)}
+.l2{display:flex;gap:8px;padding:0 0 14px;flex-wrap:wrap}
+.l2 button{padding:8px 18px;border:1px solid var(--line);background:var(--card);border-radius:20px;cursor:pointer;font-size:14px;font-weight:600;font-family:inherit;color:var(--sub)}
+.l2 button.on.g{background:var(--gold);border-color:var(--gold);color:#fff}
+.l2 button.on.r{background:var(--rose-t);border-color:var(--rose-t);color:#fff}
+.l2 .cnt{font-size:12px;font-weight:600;opacity:.75;margin-left:4px}
 
-/* 筛选 */
-.filters{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0 14px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:12px}
-.filters .grp{display:flex;gap:6px;align-items:center}
-.filters .lb{font-size:13px;color:var(--sub);font-weight:600}
-.ftab{padding:5px 14px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid var(--line);background:#faf9f5;color:#5c5a56;font-family:inherit;transition:.18s}
-.ftab:hover{border-color:var(--gold);color:#8a6a2a}
-.ftab.on{background:var(--rose);border-color:var(--rose);color:#fff}
-.search{flex:1;min-width:200px;padding:7px 13px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-family:inherit;background:#faf9f5;outline:none}
-.search:focus{border-color:var(--gold);background:#fff}
+.pane{display:none;padding:18px 44px 40px}
+.pane.on{display:block}
+.dist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:16px}
+.dist h3{font-size:15px;font-weight:700;margin-bottom:12px}
+.dist .row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;font-size:13px;font-weight:600;border:1px solid var(--line);background:#faf9f5}
+.chip b{font-weight:800}
+.chip.up{background:#fdeeec;color:#c0392b;border-color:#f7d5d2}
+.chip.nw{background:var(--gold-bg);color:#8a6a2a;border-color:var(--gold-line)}
+.chip.fl{background:#eef2f7;color:#5a6b80;border-color:#dbe3ec}
+.chip.dn{background:#eaf5ee;color:#2e7d52;border-color:#cfe8d8}
+.summ{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:13px 17px;margin-bottom:14px;font-size:13px;color:#5f5b55;line-height:1.85}
+.summ b{color:var(--ink);font-weight:800}
+.summ .k{color:#a09c95;margin:0 4px}
 
-/* 商品网格 */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.pcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;gap:12px;transition:.22s}
-.pcard:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.08);border-color:rgba(0,0,0,.07)}
-.pcard .img{width:118px;height:118px;flex:none;border-radius:8px;object-fit:cover;border:1px solid #edebe5;cursor:zoom-in;background:#f6f3ec}
-.pcard .noimg{width:118px;height:118px;flex:none;border-radius:8px;background:linear-gradient(135deg,var(--gold-bg),var(--line));display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold);font-size:11px;font-weight:700}
-.pcard .body{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
-.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:5px}
-.tg{font-size:10px;padding:1px 7px;border-radius:4px;font-weight:600;white-space:nowrap}
-.tg-pdd{background:var(--pdd-bg);color:var(--pdd)}
-.tg-jd{background:var(--jd-bg);color:var(--jd)}
-.tg-cat{background:var(--gold-bg);color:#a97e4f}
-.tg-brand{background:#eef2f7;color:#5a6b80;border:1px solid #dbe3ec}
-.tg-merge{background:#f0f7f1;color:#3d7a52;border:1px solid #cfe6d6}
-.ptitle{font-size:14px;line-height:1.45;font-weight:700;color:#2d2a26;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.pquote{background:#fbf8f1;border-left:2px solid #d9c9a8;padding:6px 9px;border-radius:0 6px 6px 0;font-size:12px;color:#6b6b6b;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.btns{display:flex;gap:6px}
-.btn{flex:1;text-align:center;padding:6px 10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;cursor:pointer;transition:.2s;border:1px solid transparent;white-space:nowrap}
-.btn-v{background:var(--gold-bg);color:#a97e4f;border-color:var(--gold-line)}
-.btn-v:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
-.btn-l{background:#f3eef6;color:#7a5a90;border-color:#e3d5ec}
-.btn-l:hover{background:#7a5a90;color:#fff;border-color:#7a5a90}
-.empty{padding:50px 0;text-align:center;color:#9c9995;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;gap:12px}
+.card img{width:112px;height:112px;border-radius:10px;object-fit:cover;border:1px solid var(--line);flex:none;cursor:zoom-in;background:#faf9f5}
+.card .noimg{width:112px;height:112px;border-radius:10px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:var(--rose-bg);color:var(--rose);border:1px solid var(--rose-line);text-align:center;padding:6px}
+.card .noimg .b{font-size:15px;font-weight:800;line-height:1.25;letter-spacing:-.01em}
+.card .noimg .c{font-size:11px;font-weight:600;opacity:.75}
+.card .noimg .s{font-size:10px;font-weight:600;opacity:.5}
+.card .bd{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.card .nm{font-size:14px;font-weight:700;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tg{font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600;border:1px solid transparent}
+.tg.pdd{background:var(--pdd-bg);color:var(--pdd);border-color:#f7d5d2}
+.tg.jd{background:var(--jd-bg);color:var(--jd);border-color:#f7d5d2}
+.tg.cat{background:var(--rose-bg);color:var(--rose);border-color:var(--rose-line)}
+.tg.br{background:#eef2f7;color:#5a6b80;border-color:#dbe3ec}
+.tg.up{background:#fdeeec;color:#c0392b;border-color:#f7d5d2}
+.tg.nw{background:var(--gold-bg);color:#8a6a2a;border-color:var(--gold-line)}
+.tg.fl{background:#eef2f7;color:#5a6b80;border-color:#dbe3ec}
+.tg.dn{background:#eaf5ee;color:#2e7d52;border-color:#cfe8d8}
+.mx{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:2px}
+.mx div{font-size:12px;color:var(--sub)}
+.mx b{font-size:14px;color:var(--ink);font-weight:800;margin-right:3px}
+.mx b.u{color:#c0392b}
+.mx b.d{color:#2e7d52}
+.mx b.h{color:#b89968}
+.mx b.n{color:#9c9995}
+.dpa{font-size:11.5px;color:#9c9995;line-height:1.5;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.dpa b{color:#7b776f;font-weight:600}
+.lk{color:var(--rose);text-decoration:none;font-weight:700;border:1px solid var(--rose-line);border-radius:4px;padding:1px 6px;margin-left:5px;font-size:11px;white-space:nowrap}
+.lk:hover{background:var(--rose-bg)}
+.qt{font-size:12px;color:var(--sub);font-style:italic;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
-/* 合并明细 */
-.merges{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.mg{display:inline-flex;align-items:center;gap:5px;background:var(--rose-bg);color:var(--rose);border:1px solid var(--rose-line);border-radius:10px;padding:5px 11px;font-size:12px;white-space:nowrap}
-.mg b{font-weight:800}
-.mg i{font-style:normal;color:#b89aa2;font-size:11px}
+.empty{background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:44px 20px;text-align:center}
+.empty .ic{font-size:34px}
+.empty .t{font-size:16px;font-weight:700;margin-top:10px}
+.empty .d{font-size:13px;color:var(--sub);margin-top:6px;line-height:1.7}
 
-.note{background:#fbfaf6;border:1px dashed #e3dccb;border-radius:12px;padding:16px 20px;font-size:13px;color:var(--sub);line-height:1.85}
-.note b{color:var(--ink)}
-footer{padding:26px 44px 40px;text-align:center;color:#9c9995;font-size:12px;line-height:1.9;border-top:1px solid var(--line);margin-top:20px}
-
-/* 图片弹层 */
-.modal{position:fixed;inset:0;background:rgba(30,26,22,.82);display:none;align-items:center;justify-content:center;z-index:99;cursor:zoom-out}
-.modal.on{display:flex}
-.modal img{max-width:86vw;max-height:86vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-@media (max-width:900px){
-  .stats,.dists{grid-template-columns:repeat(2,1fr)}
+.note{padding:0 44px 40px;font-size:12px;color:#9c9995;line-height:1.8}
+#mb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+#mb.on{display:flex}
+#mb img{max-width:90vw;max-height:90vh;border-radius:8px;background:#fff}
+@media(max-width:760px){
+  .banner{padding:24px 20px 22px}.banner h1{font-size:24px}
+  .stats,.l1,.l2,.pane,.note{padding-left:20px;padding-right:20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
   .grid{grid-template-columns:1fr}
-  section,.banner,.stats{padding-left:20px;padding-right:20px}
 }
-</style>
-</head>
-<body>
-<main>
-  <div class="banner">
-    <div class="tt"><h1>美妆行业 CID 爆品选品库</h1><span class="tag" id="updTag">—</span><span class="tag">对外版 · 仅公开爆品信息</span></div>
-    <div class="sub">按二级类目聚合，同商品已合并去重　·　点击类目卡片筛选，支持按平台与关键词检索　·　每款附抖音素材视频与落地页直达链路</div>
-    <div class="gold-line"></div>
-  </div>
-
-  <div class="stats" id="stats"></div>
-
-  <section>
-    <div class="sec-head"><h2>类目分布</h2><span class="hint">点击卡片筛选（可多选，再次点击取消）</span><span class="cnt" id="catCnt"></span></div>
-    <div class="dists" id="dists"></div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="filters">
-      <div class="grp"><span class="lb">引流平台</span><span id="platTabs"></span></div>
-      <input class="search" id="search" placeholder="搜索商品标题 / 品牌，如「贵妇膏」「植物大师」">
-      <span class="lb" id="resCnt"></span>
-    </div>
-    <div class="grid" id="grid"></div>
-  </section>
-
-  <section style="padding-top:0" id="mergeSec">
-    <div class="sec-head"><h2>同商品合并明细</h2><span class="hint">同一商品多条素材已合并为 1 款，右侧为合并条数</span></div>
-    <div class="merges" id="merges"></div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="sec-head"><h2>口径与说明</h2></div>
-    <div class="note">
-      <b>爆品</b>：取自抖音美妆行业公开爆品榜，按商品维度去重合并后的在投商品款数。<br>
-      <b>类目</b>：二级类目为聚合口径，卡片内标签为三级类目；占比 = 该类目款数 ÷ 爆品总数。<br>
-      <b>引流平台</b>：按落地页归属统计（拼多多 / 京东），非广告平台口径。<br>
-      <b>直达链路</b>：为商品落地页原始链接，含投放监测宏参数，仅供跳转查看，不代表任何效果承诺。<br>
-      <b>数据边界</b>：本看板仅含公开爆品与素材信息，<b>不含任何平台内部消耗、出价、转化等敏感数据</b>，可对外分发。
-    </div>
-  </section>
-
-  <footer>
-    美妆行业 CID 爆品选品库 · V1.0　｜　数据来源：抖音美妆行业公开爆品榜（<span id="upd2">—</span>）<br>
-    单文件、无外部依赖，可直接分发或部署为在线选品库
-  </footer>
+</style></head><body><main>
+<div class="banner"><div class="tt"><h1>本美选品库</h1><span class="tag">V1.0</span></div>
+<div class="sub">小店爆品看选什么货，CID 爆品看投什么品。两大模块、四类清单，服务本美选品与投放决策。</div><div class="gold-line"></div></div>
+<div class="stats"><div class="stat"><div class="ic" style="background:var(--gold-bg)">📦</div><div><div class="lb">选品总数</div><div class="vl">28 款</div><div class="ex">两大模块合计</div></div></div><div class="stat"><div class="ic" style="background:var(--gold-bg)">🏪</div><div><div class="lb">小店爆品</div><div class="vl">0 款</div><div class="ex">长青品 + 应季品 · 待补充</div></div></div><div class="stat"><div class="ic" style="background:var(--rose-bg)">📡</div><div><div class="lb">CID 已投爆品</div><div class="vl">28 款</div><div class="ex">白牌近7天在投主力</div></div></div><div class="stat"><div class="ic" style="background:var(--rose-bg)">💰</div><div><div class="lb">周消耗</div><div class="vl">54.2万</div><div class="ex">占白牌大盘 91.3%</div></div></div></div>
+<div class="l1"><button class="l1b g on" onclick="go(0)"><div class="n">🏪 小店爆品</div><div class="d">抖音生态内卖得好的货 · 回答选什么品</div></button><button class="l1b r" onclick="go(1)"><div class="n">📡 CID 爆品</div><div class="d">广告引流投放视角 · 回答投什么品</div></button></div>
+<div class="pane on" id="p0"><div class="l2"><button class="g on" id="b0_0" onclick="go(0,0)">长青品<span class="cnt">0</span></button><button class="g" id="b0_1" onclick="go(0,1)">应季品<span class="cnt">0</span></button></div><div class="sub" id="s0_0" style="display:block"><div class="empty"><div class="ic">📥</div><div class="t">长青品 · 待补充</div><div class="d">需要提供小店维度爆品明细：商品名、类目、销量、GMV、价格、上架时间等</div></div></div><div class="sub" id="s0_1" style="display:none"><div class="empty"><div class="ic">📥</div><div class="t">应季品 · 待补充</div><div class="d">需要提供小店维度爆品明细，并按季节窗口标注</div></div></div></div><div class="pane" id="p1"><div class="l2"><button class="r on" id="b1_0" onclick="go(1,0)">已投爆品<span class="cnt">28</span></button><button class="r" id="b1_1" onclick="go(1,1)">新机会品<span class="cnt">0</span></button></div><div class="sub" id="s1_0" style="display:block"><div class="summ">本美白牌 CID 近 7 天（截至 10.19）在投主力商品 <b>28 款</b>，合计消耗 <b>54.2万</b>，占白牌大盘 59.4万 的 <b>91.3%</b>。<span class="k">|</span> 类目高度集中在 <b>眼部护理</b>（12 款、消耗占比 45.1%）。<span class="k">|</span> 走势上 <b>高增长 9</b> 款、<b>纯新品 5</b> 款为扩量机会，<b>减速主力 7</b> 款需评估换品或调价，<b>存量平稳 7</b> 款作基本盘。</div><div class="dist"><h3>类目分布 · 三级类目</h3><div class="row"><span class="chip ">眼部护理 <b>12</b></span><span class="chip ">乳液面霜 <b>5</b></span><span class="chip ">面部精华 <b>4</b></span><span class="chip ">面部彩妆 <b>4</b></span><span class="chip ">洁面 <b>1</b></span><span class="chip ">化妆水 <b>1</b></span><span class="chip ">唇部彩妆 <b>1</b></span></div></div><div class="dist"><h3>投放走势 · 近7天 vs 前7天</h3><div class="row"><span class="chip up">高增长 <b>9</b></span><span class="chip fl">存量平稳 <b>7</b></span><span class="chip dn">减速主力 <b>7</b></span><span class="chip nw">纯新品 <b>5</b></span></div></div><div class="grid"><div class="card"><div class="noimg"><div class="b">迷禾</div><div class="c">眼部护理</div></div><div class="bd"><div class="nm">迷禾/mihe虫草嫩颜紧致眼霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg fl">存量平稳</span><span class="tg br">迷禾</span></div><div class="mx"><div><b class="">10.2万</b>消耗</div><div><b class="d">-18.8%</b>环比</div><div><b class="">18.7%</b>占比</div><div><b class="h">1.74</b>ROI</div><div><b class="">4.86%</b>CTR</div><div><b class="">6.35%</b>CVR</div><div><b class="">¥31</b>客单价</div></div><div class="dpa"><b>落地页</b> 迷禾虫草嫩颜紧致眼霜-171</div><div class="dpa"><b>投放</b> 近30天在投 27 天 · 中途断投（缺口 3 天）</div></div></div><div class="card"><div class="noimg"><div class="b">白云山</div><div class="c">面部精华</div></div><div class="bd"><div class="nm">白云山/BAIYUNSHAN焕颜美白祛斑油</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部精华</span><span class="tg dn">减速主力</span><span class="tg br">白云山</span></div><div class="mx"><div><b class="">8.2万</b>消耗</div><div><b class="d">-42.5%</b>环比</div><div><b class="">15.1%</b>占比</div><div><b class="h">1.66</b>ROI</div><div><b class="">3.79%</b>CTR</div><div><b class="">6.55%</b>CVR</div><div><b class="">¥59</b>客单价</div></div><div class="dpa"><b>落地页</b> 10-白云山焕颜美白祛斑油</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">洁面</div></div><div class="bd"><div class="nm">颜大师美白祛痘洗面奶</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">洁面</span><span class="tg up">高增长</span></div><div class="mx"><div><b class="">6.6万</b>消耗</div><div><b class="u">+106.8%</b>环比</div><div><b class="">12.2%</b>占比</div><div><b class="h">1.66</b>ROI</div><div><b class="">3.38%</b>CTR</div><div><b class="">7.87%</b>CVR</div><div><b class="">¥40</b>客单价</div></div><div class="dpa"><b>落地页</b> 颜大师祛痘美白洗面奶1057</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">植物大师</div><div class="c">面部精华</div></div><div class="bd"><div class="nm">植物大师/PLANT MASTER美白祛斑精华液</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部精华</span><span class="tg up">高增长</span><span class="tg br">植物大师</span></div><div class="mx"><div><b class="">5.9万</b>消耗</div><div><b class="u">+464.5%</b>环比</div><div><b class="">10.9%</b>占比</div><div><b class="h">1.61</b>ROI</div><div><b class="">2.59%</b>CTR</div><div><b class="">2.83%</b>CVR</div><div><b class="">¥57</b>客单价</div></div><div class="dpa"><b>落地页</b> 植物大师美白祛斑精华液</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">宜大生物虫草眼霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg dn">减速主力</span></div><div class="mx"><div><b class="">3.8万</b>消耗</div><div><b class="d">-45.1%</b>环比</div><div><b class="">7.1%</b>占比</div><div><b class="">1.53</b>ROI</div><div><b class="">3.56%</b>CTR</div><div><b class="">9.23%</b>CVR</div><div><b class="">¥60</b>客单价</div></div><div class="dpa"><b>落地页</b> 宜大生物虫草眼霜</div><div class="dpa"><b>投放</b> 近30天在投 24 天 · 中途断投（缺口 6 天）</div></div></div><div class="card"><div class="noimg"><div class="b">白云山</div><div class="c">眼部护理</div></div><div class="bd"><div class="nm">白云山/BAIYUNSHAN眼部抗皱紧致植萃精华油</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg dn">减速主力</span><span class="tg br">白云山</span></div><div class="mx"><div><b class="">2.9万</b>消耗</div><div><b class="d">-46.7%</b>环比</div><div><b class="">5.3%</b>占比</div><div><b class="">1.54</b>ROI</div><div><b class="">1.65%</b>CTR</div><div><b class="">3.00%</b>CVR</div><div><b class="">¥70</b>客单价</div></div><div class="dpa"><b>落地页</b> 白云山/BAIYUNSHAN眼部抗皱植萃精华油</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">乳液面霜</div></div><div class="bd"><div class="nm">零姿美白祛斑抗皱霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">乳液面霜</span><span class="tg dn">减速主力</span></div><div class="mx"><div><b class="">2.8万</b>消耗</div><div><b class="d">-55.0%</b>环比</div><div><b class="">5.2%</b>占比</div><div><b class="h">1.68</b>ROI</div><div><b class="">5.35%</b>CTR</div><div><b class="">5.37%</b>CVR</div><div><b class="">¥40</b>客单价</div></div><div class="dpa"><b>落地页</b> 零姿美白祛斑抗皱霜577 新-6</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">烟酰胺淡化眼袋眼霜/乳</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg up">高增长</span></div><div class="mx"><div><b class="">1.4万</b>消耗</div><div><b class="u">+1012.0%</b>环比</div><div><b class="">2.6%</b>占比</div><div><b class="h">1.70</b>ROI</div><div><b class="">7.18%</b>CTR</div><div><b class="">2.01%</b>CVR</div><div><b class="">¥27</b>客单价</div></div><div class="dpa"><b>落地页</b> 烟酰胺淡化眼袋眼霜/乳</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">淡化细纹/抗皱紧致眼霜/乳</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg fl">存量平稳</span></div><div class="mx"><div><b class="">1.2万</b>消耗</div><div><b class="d">-9.9%</b>环比</div><div><b class="">2.2%</b>占比</div><div><b class="h">1.56</b>ROI</div><div><b class="">7.28%</b>CTR</div><div><b class="">2.37%</b>CVR</div><div><b class="">¥24</b>客单价</div></div><div class="dpa"><b>落地页</b> 【拍一发三】到手三瓶正品虫草眼霜去眼袋淡化细纹紧致眼周JS</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">花柏禾奢润抗皱紧致套装</div><div class="tags"><span class="tg jd">京东</span><span class="tg cat">眼部护理</span><span class="tg fl">存量平稳</span></div><div class="mx"><div><b class="">1.2万</b>消耗</div><div><b class="u">+2.1%</b>环比</div><div><b class="">2.1%</b>占比</div><div><b class="">0.86</b>ROI</div><div><b class="">1.77%</b>CTR</div><div><b class="">7.15%</b>CVR</div><div><b class="">¥173</b>客单价</div></div><div class="dpa"><b>落地页</b> 花柏禾奢润抗皱紧致套装</div><div class="dpa"><b>投放</b> 近30天在投 24 天 · 中途断投（缺口 6 天）</div></div></div><div class="card"><div class="noimg"><div class="b">面部彩妆</div></div><div class="bd"><div class="nm">粉底棒</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部彩妆</span><span class="tg up">高增长</span></div><div class="mx"><div><b class="">1.1万</b>消耗</div><div><b class="u">+1133.8%</b>环比</div><div><b class="">2.0%</b>占比</div><div><b class="">1.15</b>ROI</div><div><b class="">4.32%</b>CTR</div><div><b class="">3.06%</b>CVR</div><div><b class="">¥30</b>客单价</div></div><div class="dpa"><b>落地页</b> 无暇橡皮擦粉底棒</div><div class="dpa"><b>投放</b> 近30天在投 14 天 · 中途断投（缺口 16 天）</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">淡化细纹/抗皱紧致眼膜</div><div class="tags"><span class="tg jd">京东</span><span class="tg cat">眼部护理</span><span class="tg up">高增长</span></div><div class="mx"><div><b class="">1.1万</b>消耗</div><div><b class="u">+36.6%</b>环比</div><div><b class="">2.0%</b>占比</div><div><b class="">0.71</b>ROI</div><div><b class="">2.48%</b>CTR</div><div><b class="">3.21%</b>CVR</div><div><b class="">¥57</b>客单价</div></div><div class="dpa"><b>落地页</b> 黄芪抗皱淡纹水晶眼膜贴</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">修护眼霜/乳</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg fl">存量平稳</span></div><div class="mx"><div><b class="">9,133</b>消耗</div><div><b class="u">+10.7%</b>环比</div><div><b class="">1.7%</b>占比</div><div><b class="h">2.27</b>ROI</div><div><b class="">7.62%</b>CTR</div><div><b class="">3.96%</b>CVR</div><div><b class="">¥20</b>客单价</div></div><div class="dpa"><b>落地页</b> 【拍一发三】到手三瓶正品虫草眼霜</div><div class="dpa"><b>投放</b> 近30天在投 13 天 · 后期起投（2026-10-06 起投）</div></div></div><div class="card"><div class="noimg"><div class="b">面部精华</div></div><div class="bd"><div class="nm">抗皱精华液/肌底液</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部精华</span><span class="tg fl">存量平稳</span></div><div class="mx"><div><b class="">9,083</b>消耗</div><div><b class="d">-15.6%</b>环比</div><div><b class="">1.7%</b>占比</div><div><b class="">1.55</b>ROI</div><div><b class="">4.87%</b>CTR</div><div><b class="">0.42%</b>CVR</div><div><b class="">¥81</b>客单价</div></div><div class="dpa"><b>落地页</b> 精华液-8-1002753845750</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">面部彩妆</div></div><div class="bd"><div class="nm">虫草素颜霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部彩妆</span><span class="tg nw">纯新品</span></div><div class="mx"><div><b class="">8,992</b>消耗</div><div><b class="n">新品</b>环比</div><div><b class="">1.7%</b>占比</div><div><b class="">1.28</b>ROI</div><div><b class="">4.77%</b>CTR</div><div><b class="">6.06%</b>CVR</div><div><b class="">¥21</b>客单价</div></div><div class="dpa"><b>落地页</b> 正品冬虫夏草素颜贵妇膏</div><div class="dpa"><b>投放</b> 近30天在投 6 天 · 新近起投（2026-10-12 起投）</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">淡化眼袋眼霜/乳</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg up">高增长</span></div><div class="mx"><div><b class="">7,868</b>消耗</div><div><b class="u">+1292.7%</b>环比</div><div><b class="">1.5%</b>占比</div><div><b class="">1.19</b>ROI</div><div><b class="">4.78%</b>CTR</div><div><b class="">4.85%</b>CVR</div><div><b class="">¥31</b>客单价</div></div><div class="dpa"><b>落地页</b> 草本眼周眼袋外用眼霜</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">乳液面霜</div></div><div class="bd"><div class="nm">祛斑面霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">乳液面霜</span><span class="tg dn">减速主力</span></div><div class="mx"><div><b class="">5,895</b>消耗</div><div><b class="d">-37.1%</b>环比</div><div><b class="">1.1%</b>占比</div><div><b class="">1.46</b>ROI</div><div><b class="">28.83%</b>CTR</div><div><b class="">0.07%</b>CVR</div><div><b class="">¥51</b>客单价</div></div><div class="dpa"><b>落地页</b> 祛斑霜-美妆用品-1-1009280838493</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">滋养眼霜/乳</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg fl">存量平稳</span></div><div class="mx"><div><b class="">5,886</b>消耗</div><div><b class="u">+28.1%</b>环比</div><div><b class="">1.1%</b>占比</div><div><b class="h">2.48</b>ROI</div><div><b class="">6.77%</b>CTR</div><div><b class="">13.55%</b>CVR</div><div><b class="">¥20</b>客单价</div></div><div class="dpa"><b>落地页</b> 虫草眼霜家用日用</div><div class="dpa"><b>投放</b> 近30天在投 23 天 · 中途断投（缺口 7 天）</div></div></div><div class="card"><div class="noimg"><div class="b">肌活</div><div class="c">化妆水</div></div><div class="bd"><div class="nm">肌活/BIO MESO化妆水/爽肤水/面部喷雾水</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">化妆水</span><span class="tg up">高增长</span><span class="tg br">肌活</span></div><div class="mx"><div><b class="">5,322</b>消耗</div><div><b class="u">+19265.4%</b>环比</div><div><b class="">1.0%</b>占比</div><div><b class="h">1.81</b>ROI</div><div><b class="">8.47%</b>CTR</div><div><b class="">9.01%</b>CVR</div><div><b class="">¥51</b>客单价</div></div><div class="dpa"><b>落地页</b> [爆款热卖】肌活蛋白喷雾紧致饱满细腻肌肤锁水焕亮</div><div class="dpa"><b>投放</b> 近30天在投 10 天 · 后期起投（2026-10-09 起投）</div></div></div><div class="card"><div class="noimg"><div class="b">面部彩妆</div></div><div class="bd"><div class="nm">水光/润泽粉底棒</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部彩妆</span><span class="tg up">高增长</span></div><div class="mx"><div><b class="">4,904</b>消耗</div><div><b class="u">+106.6%</b>环比</div><div><b class="">0.9%</b>占比</div><div><b class="">1.08</b>ROI</div><div><b class="">3.09%</b>CTR</div><div><b class="">4.23%</b>CVR</div><div><b class="">¥30</b>客单价</div></div><div class="dpa"><b>落地页</b> 粉底棒水润控油提亮持妆</div><div class="dpa"><b>投放</b> 近30天在投 13 天 · 后期起投（2026-10-06 起投）</div></div></div><div class="card"><div class="noimg"><div class="b">乳液面霜</div></div><div class="bd"><div class="nm">倾颜烟酰胺美白祛斑霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">乳液面霜</span><span class="tg dn">减速主力</span></div><div class="mx"><div><b class="">4,675</b>消耗</div><div><b class="d">-51.6%</b>环比</div><div><b class="">0.9%</b>占比</div><div><b class="">1.53</b>ROI</div><div><b class="">29.23%</b>CTR</div><div><b class="">0.09%</b>CVR</div><div><b class="">¥50</b>客单价</div></div><div class="dpa"><b>落地页</b> 祛斑霜40-995080771948</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">乳液面霜</div></div><div class="bd"><div class="nm">烟酰胺美白面霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">乳液面霜</span><span class="tg fl">存量平稳</span></div><div class="mx"><div><b class="">4,198</b>消耗</div><div><b class="d">-7.0%</b>环比</div><div><b class="">0.8%</b>占比</div><div><b class="">1.50</b>ROI</div><div><b class="">16.24%</b>CTR</div><div><b class="">0.45%</b>CVR</div><div><b class="">¥50</b>客单价</div></div><div class="dpa"><b>落地页</b> 祛斑霜-美妆用品-4-1011795205769</div><div class="dpa"><b>投放</b> 近30天在投 28 天 · 持续投放·偶发中断（缺口 2 天）</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">保湿眼霜/乳</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg dn">减速主力</span></div><div class="mx"><div><b class="">3,224</b>消耗</div><div><b class="d">-26.9%</b>环比</div><div><b class="">0.6%</b>占比</div><div><b class="h">2.21</b>ROI</div><div><b class="">4.76%</b>CTR</div><div><b class="">13.74%</b>CVR</div><div><b class="">¥25</b>客单价</div></div><div class="dpa"><b>落地页</b> 虫草眼霜水润家用</div><div class="dpa"><b>投放</b> 近30天在投 30 天 · 持续投放·全30天</div></div></div><div class="card"><div class="noimg"><div class="b">乳液面霜</div></div><div class="bd"><div class="nm">熊果苷抗皱面霜</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">乳液面霜</span><span class="tg up">高增长</span></div><div class="mx"><div><b class="">3,087</b>消耗</div><div><b class="u">+5074.4%</b>环比</div><div><b class="">0.6%</b>占比</div><div><b class="">0.96</b>ROI</div><div><b class="">3.35%</b>CTR</div><div><b class="">8.51%</b>CVR</div><div><b class="">¥61</b>客单价</div></div><div class="dpa"><b>落地页</b> 黄仲仁正品抗皱紧致面霜抬头鱼尾纹颈纹细纹法令嫩肤补水护肤保湿</div><div class="dpa"><b>投放</b> 近30天在投 28 天 · 持续投放·偶发中断（缺口 2 天）</div></div></div><div class="card"><div class="noimg"><div class="b">韩泊莉</div><div class="c">唇部彩妆</div></div><div class="bd"><div class="nm">韩泊莉/HANBOLI变色唇膏</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">唇部彩妆</span><span class="tg nw">纯新品</span><span class="tg br">韩泊莉</span></div><div class="mx"><div><b class="">2,102</b>消耗</div><div><b class="n">新品</b>环比</div><div><b class="">0.4%</b>占比</div><div><b class="">1.21</b>ROI</div><div><b class="">4.33%</b>CTR</div><div><b class="">5.98%</b>CVR</div><div><b class="">¥20</b>客单价</div></div><div class="dpa"><b>落地页</b> 【温变色润唇膏】</div><div class="dpa"><b>投放</b> 近30天在投 14 天 · 中途断投（缺口 16 天）</div></div></div><div class="card"><div class="noimg"><div class="b">面部精华</div></div><div class="bd"><div class="nm">修护精华液/肌底液</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部精华</span><span class="tg nw">纯新品</span></div><div class="mx"><div><b class="">1,533</b>消耗</div><div><b class="n">新品</b>环比</div><div><b class="">0.3%</b>占比</div><div><b class="">1.22</b>ROI</div><div><b class="">7.23%</b>CTR</div><div><b class="">0.65%</b>CVR</div><div><b class="">¥40</b>客单价</div></div><div class="dpa"><b>落地页</b> 黄金人参精华液肌底液</div><div class="dpa"><b>投放</b> 近30天在投 15 天 · 中途断投（缺口 15 天）</div></div></div><div class="card"><div class="noimg"><div class="b">面部彩妆</div></div><div class="bd"><div class="nm">水光/润泽粉底液</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">面部彩妆</span><span class="tg nw">纯新品</span></div><div class="mx"><div><b class="">1,531</b>消耗</div><div><b class="n">新品</b>环比</div><div><b class="">0.3%</b>占比</div><div><b class="">1.14</b>ROI</div><div><b class="">5.74%</b>CTR</div><div><b class="">3.25%</b>CVR</div><div><b class="">¥30</b>客单价</div></div><div class="dpa"><b>落地页</b> 遮瑕粉底水润提亮</div><div class="dpa"><b>投放</b> 近30天在投 3 天 · 新近起投（2026-10-15 起投）</div></div></div><div class="card"><div class="noimg"><div class="b">眼部护理</div></div><div class="bd"><div class="nm">赫蒂娇黄芪抗皱眼部精华油</div><div class="tags"><span class="tg pdd">拼多多</span><span class="tg cat">眼部护理</span><span class="tg nw">纯新品</span></div><div class="mx"><div><b class="">1,133</b>消耗</div><div><b class="n">新品</b>环比</div><div><b class="">0.2%</b>占比</div><div><b class="">0.71</b>ROI</div><div><b class="">2.97%</b>CTR</div><div><b class="">6.33%</b>CVR</div><div><b class="">¥60</b>客单价</div></div><div class="dpa"><b>落地页</b> 赫蒂娇黄芪抗皱眼部精华油</div><div class="dpa"><b>投放</b> 近30天在投 4 天 · 新近起投（2026-10-15 起投）</div></div></div></div></div><div class="sub" id="s1_1" style="display:none"><div class="empty"><div class="ic">📥</div><div class="t">新机会品 · 待补充</div><div class="d">抖音有热度但尚未投放 CID 的商品，待数据补充</div></div></div></div>
+<div class="note">口径说明：① 小店爆品看抖音生态内的自然热销，分长青品（长期稳定）与应季品（当季爆发）；② CID 爆品看广告引流投放，已投爆品 = 近 7 天有 CID 投放记录的商品，新机会品 = 抖音有热度但本美尚未投放；③ 同商品的多条投放计划已合并计为 1 款，消耗取合并后合计；④ 环比 = 近 7 天 vs 前 7 天消耗变化，红涨绿跌；⑤ 大盘基准 ROI 1.56 / CTR 6.16% / CVR 2.22% / 客单价 ¥40，ROI 高于基准以金色标注。</div>
 </main>
-
-<div class="modal" id="modal" onclick="this.classList.remove('on')"><img id="modalImg" alt=""></div>
-
+<div id="mb" onclick="this.classList.remove('on')"><img id="mbi" src=""></div>
 <script>
-var D = {"updateDate": "10月19日更新", "cats": [{"emoji": "🧴", "name": "面部洗护", "n": 12, "pct": 35.3}, {"emoji": "✨", "name": "美妆特殊化妆品", "n": 8, "pct": 23.5}, {"emoji": "👁️", "name": "眼部护理", "n": 5, "pct": 14.7}, {"emoji": "🌸", "name": "香水/香膏", "n": 3, "pct": 8.8}, {"emoji": "💋", "name": "唇部彩妆", "n": 2, "pct": 5.9}, {"emoji": "💄", "name": "面部彩妆", "n": 2, "pct": 5.9}, {"emoji": "🖌️", "name": "眼部彩妆", "n": 1, "pct": 2.9}, {"emoji": "🪮", "name": "美妆工具", "n": 1, "pct": 2.9}], "products": [{"cat": 0, "plat": "pdd", "img": "p00.jpg", "title": "【拍一发三】抗皱精华面部人参多肽原液补水弹润紧致护肤精华水", "quote": "（拒绝虚假宣传）限时特惠！全新热卖商品，厂家直发，超低价格等你来抢！！！", "tags": ["拼多多", "面部护肤", "🏷️ VEVR"], "video": "https://www.douyin.com/video/7696870966537768233", "land": "https://w3.muchengine.com/xx.html?id=1791892910533&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&cl=1791978527758_vv6oqn9z&promotionid=__PROMOTION_ID__"}, {"cat": 0, "plat": "pdd", "img": "p01.jpg", "title": "【官方正品】美容白醋液洗脸醋美容专用护肤面部身体护理500ml/瓶", "quote": "面部好物，全力推荐，用过都说好用，复购超高哦", "tags": ["拼多多", "面部护肤"], "video": "https://www.douyin.com/video/7696756961156549924", "land": "https://w3.muchengine.com/xx.html?id=1792070744436&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&cl=1792070749049_vypt24nghttps://w3.muchengine.com/xx.html?id=1792070744436&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&cl=1792070749049_vypt24ng&promotionid=__PROMOTION_ID__"}, {"cat": 0, "plat": "pdd", "img": "", "title": "【拍一发二】银耳珍珠滋养霜面霜补水保湿滋润Y27", "quote": "疯狂抢购！热卖商品限时特惠，厂家直发！", "tags": ["拼多多", "面部护肤", "🔁 4 条→1 款"], "video": "https://www.douyin.com/video/7695630201669029162", "land": "https://www.chengzijianzhan.com/tetris/page/7695609125908267034?projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__&clickid=__CLICKID__"}, {"cat": 0, "plat": "jd", "img": "p03.jpg", "title": "【官方正品】倾颜紧致抗皱面霜提拉紧致淡化细纹补水保湿男女护肤", "quote": "（买一发四）拒绝虚假宣传！面霜选的好，皮肤没烦恼！试试#倾颜紧致面霜#法令纹#鱼尾纹#细纹！#国货#抗皱#于震推荐", "tags": ["京东", "面部护肤", "🏷️ 倾颜"], "video": "https://www.douyin.com/video/7696556665151311140", "land": "https://item.jd.com/10236519501232.html?sdx=ehi-lLxFuZiE6JnKYoVZjc8lsDGTCwsrsmlPt69BZt-Id9OgKppV53_gok3mU2SX9g&pcdk=ka--nR2guKiowU3LpuPnq0LnAR_vV97QAGQGMbci2OwdYWl1pEhPjZaQY5JLknu5.rQ4a.tlbT&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__&clickid=__CLICKID__"}, {"cat": 0, "plat": "pdd", "img": "p04.jpg", "title": "【正品】男士B5积雪草面霜紧致抗皱补水保湿收毛孔清爽润肤", "quote": "就这个随便抹抹，男朋友小脸巨嫩", "tags": ["拼多多", "面部护肤"], "video": "https://www.douyin.com/video/7696563129987239204", "land": "https://w3.muchengine.com/xx.html?id=1791611090897&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&cl=1792052324834_nk3xl7m0&promotionid=__PROMOTION_ID__"}, {"cat": 0, "plat": "pdd", "img": "p05.jpg", "title": "【抗皱 紧致】植物大师PDRN白桦树汁人参淡皱紧致精华液舒缓47,【抗皱 紧致】植物大师PDRN白桦树汁人参淡皱紧致精华液舒缓63,【抗皱 紧致】植物大师PDRN白桦树汁人参淡皱紧致精华液舒缓51", "quote": "年少不知皮肤好，老来错把纹路当宝！五官再美也扛不住皱纹啊，试试这款抗皱精华液，专抹皱纹，改善松弛下垂！", "tags": ["拼多多", "面部护肤", "🏷️ 植物大师", "🔁 4 条→1 款"], "video": "https://www.douyin.com/video/7695834321508109577", "land": "https://daqi2.dqapi.cn/order/Common/site/5a154f47?channel=1&linkid=3788759971784480&siteid=0&promotionid=__PROMOTION_ID__&rid=__REQUEST_ID__&ip=__IP__&ipv4=__IPV4__&model=__MODEL__&adid=__AID__&ad_name=__PROMOTION_NAME__&creativeid=__CID__&creativetype=__CTYPE__&clickid=__CLICKID__&avid=__ADVERTISER_ID__&trackid=__TRACK_ID__&csite=__CSITE__&ua=__UA__&geo=__GEO__&unionSite=__UNION_SITE__&mid3=__MID3__&prid=__PROJECT_ID__&ref=5a154f47&projectid=__PROJECT_ID__"}, {"cat": 0, "plat": "pdd", "img": "p06.jpg", "title": "【拍一发三】维生素E抬头纹川字纹皱纹额头提拉紧致抗皱护理霜", "quote": "请大数据推给有需要的人，让品质和保障陪伴你的每一次选择！", "tags": ["拼多多", "面部护肤"], "video": "https://www.douyin.com/video/7696273269749566771", "land": "https://kd.paiwan.com/landing/page/20261014232611948?cidname=clickid&aid=__ADVERTISER_ID__&adid=__PROMOTION_ID__&track_id=__REQID__&click_time=__TS__&clickid=__CLICKID__&ext=%7B%22adid_name%22%3A%22__AID_NAME__%22%2C%22group_id%22%3A%22__CAMPAIGN_ID__%22%2C%22group_name%22%3A%22__CAMPAIGN_NAME__%22%2C%22creative_id%22%3A%22__CID__%22%2C%22project_id%22%3A%22__PROJECT_ID__%22%2C%22promotion_id%22%3A%22__PROMOTION_ID__%22%2C%22csite%22%3A%22__CSITE__%22%2C%22ip%22%3A%22__IP__%22%2C%22request_id%22%3A%22__REQUEST_ID__%22%2C%22mid1%22%3A%22__MID1__%22%2C%22mid2%22%3A%22__MID2__%22%2C%22mid3%22%3A%22__MID3__%22%2C%22mid4%22%3A%22__MID4__%22%2C%22mid5%22%3A%22__MID5__%22%2C%22mid6%22%3A%22__MID6__%22%2C%22convert_id%22%3A%22__CONVERT_ID__%22%2C%22os%22%3A%22__OS__%22%2C%22ua%22%3A%22__UA__%22%2C%22ts%22%3A%22__TS__%22%2C%22model%22%3A%22__MODEL__%22%2C%22track_id%22%3A%22__TRACK_ID__%22%7D&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__"}, {"cat": 0, "plat": "pdd", "img": "p07.jpg", "title": "【官方正品】分馏椰子油护肤精华液面部全身按摩滋润护理补水精油", "quote": "这个价格太香了!闭眼入，绝对不亏!", "tags": ["拼多多", "面部护肤"], "video": "https://www.douyin.com/video/7692339044079947049", "land": "https://cid-landpage.smallfighter.com/v2/page/546/54685c2f7aa6b1d60e3f3a478ef019c2/?rqid=__TRACK_ID__&advid=__ADVERTISER_ID__&csite=__CSITE__&mid3=__MID3__&clickid=__CLICKID__&promotionid=__PROMOTION_ID__&projectid=__PROJECT_ID__&creativetype=__CTYPE__"}, {"cat": 0, "plat": "pdd", "img": "p08.jpg", "title": "【拍一发四】银耳珍珠滋润霜 用了都说好", "quote": "空调房待久脸干难受？长效锁水银耳珍珠霜，时刻水润不紧绷 #空调房护肤 #长效保湿", "tags": ["拼多多", "面部护肤"], "video": "https://www.douyin.com/video/7696386415013219610", "land": "https://w3.muchengine.com/xx.html?id=1791191896595&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&cl=1792069530825_u0mmlbc5&promotionid=__PROMOTION_ID__"}, {"cat": 0, "plat": "pdd", "img": "p09.jpg", "title": "视黄醇蛇毒肽黄金水润涂抹式面膜保湿紧致肌肤改善粗糙弹嫩SY伊1", "quote": "与其纠结要不要尝试，不如亲身感受它的好，用过就知道，它能给你带来安心与舒适。#好物推荐", "tags": ["拼多多", "面部护肤"], "video": "https://www.douyin.com/video/7696727640517971227", "land": "https://cid-landpage.smallfighter.com/v2/page/63a/63ad3e95f3bd22132bc10fcec2017095/?rqid=__TRACK_ID__&advid=__ADVERTISER_ID__&csite=__CSITE__&mid3=__MID3__&clickid=__CLICKID__&promotionid=__PROMOTION_ID__&projectid=__PROJECT_ID__&creativetype=__CTYPE__"}, {"cat": 0, "plat": "pdd", "img": "", "title": "【官方正品 】倾颜紧致抗皱面霜提拉紧致淡化细纹补水保湿护理E6", "quote": "爱自己才是终身烂漫的开始，长#皱纹的姐姐们，不管你是40岁50岁60岁！早晚抹一抹，肌肤嫩滑纹#淡纹", "tags": ["拼多多", "面部护肤", "🏷️ 倾颜"], "video": "https://www.douyin.com/video/7694225042749590822", "land": "https://www.chengzijianzhan.com/tetris/page/7691261906891931686?projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__&clickid=__CLICKID__"}, {"cat": 0, "plat": "pdd", "img": "p11.jpg", "title": "正品富勒烯羊胎素精华液补水嫩白抗皱小鸡腿脸部提亮保湿收缩毛孔", "quote": "请大数据推给有需要的人，让品质和保障陪伴你的每一次选择！", "tags": ["拼多多", "面部护肤", "8 款爆品"], "video": "https://www.douyin.com/video/7696364651486907702", "land": "https://kd.paiwan.com/landing/page/20261014221050779?cidname=clickid&aid=__ADVERTISER_ID__&adid=__PROMOTION_ID__&track_id=__REQID__&click_time=__TS__&clickid=__CLICKID__&ext=%7B%22adid_name%22%3A%22__AID_NAME__%22%2C%22group_id%22%3A%22__CAMPAIGN_ID__%22%2C%22group_name%22%3A%22__CAMPAIGN_NAME__%22%2C%22creative_id%22%3A%22__CID__%22%2C%22project_id%22%3A%22__PROJECT_ID__%22%2C%22promotion_id%22%3A%22__PROMOTION_ID__%22%2C%22csite%22%3A%22__CSITE__%22%2C%22ip%22%3A%22__IP__%22%2C%22request_id%22%3A%22__REQUEST_ID__%22%2C%22mid1%22%3A%22__MID1__%22%2C%22mid2%22%3A%22__MID2__%22%2C%22mid3%22%3A%22__MID3__%22%2C%22mid4%22%3A%22__MID4__%22%2C%22mid5%22%3A%22__MID5__%22%2C%22mid6%22%3A%22__MID6__%22%2C%22convert_id%22%3A%22__CONVERT_ID__%22%2C%22os%22%3A%22__OS__%22%2C%22ua%22%3A%22__UA__%22%2C%22ts%22%3A%22__TS__%22%2C%22model%22%3A%22__MODEL__%22%2C%22track_id%22%3A%22__TRACK_ID__%22%7D&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__"}, {"cat": 1, "plat": "pdd", "img": "p12.jpg", "title": "美白祛斑养肤贵妇膏遮瑕防水提亮肤色抗皱紧致素颜霜亮肌肤养颜W", "quote": "（拒绝虚假宣传）限时特惠！全新热卖商品，厂家直发，超低价格等你来抢！", "tags": ["拼多多", "祛斑美白", "🔁 2 条→1 款"], "video": "https://www.douyin.com/video/7696868039614024969", "land": "https://kd.paiwan.com/landing/page/20261015175248243?cidname=clickid&aid=__ADVERTISER_ID__&adid=__PROMOTION_ID__&track_id=__REQID__&click_time=__TS__&clickid=__CLICKID__&ext=%7B%22adid_name%22%3A%22__AID_NAME__%22%2C%22group_id%22%3A%22__CAMPAIGN_ID__%22%2C%22group_name%22%3A%22__CAMPAIGN_NAME__%22%2C%22creative_id%22%3A%22__CID__%22%2C%22project_id%22%3A%22__PROJECT_ID__%22%2C%22promotion_id%22%3A%22__PROMOTION_ID__%22%2C%22csite%22%3A%22__CSITE__%22%2C%22ip%22%3A%22__IP__%22%2C%22request_id%22%3A%22__REQUEST_ID__%22%2C%22mid1%22%3A%22__MID1__%22%2C%22mid2%22%3A%22__MID2__%22%2C%22mid3%22%3A%22__MID3__%22%2C%22mid4%22%3A%22__MID4__%22%2C%22mid5%22%3A%22__MID5__%22%2C%22mid6%22%3A%22__MID6__%22%2C%22convert_id%22%3A%22__CONVERT_ID__%22%2C%22os%22%3A%22__OS__%22%2C%22ua%22%3A%22__UA__%22%2C%22ts%22%3A%22__TS__%22%2C%22model%22%3A%22__MODEL__%22%2C%22track_id%22%3A%22__TRACK_ID__%22%7D&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__"}, {"cat": 1, "plat": "pdd", "img": "p13.jpg", "title": "【拍一发三】白白油美白淡斑抗皱身体护理精华液烟酰胺护肤紧致", "quote": "（拒绝虚假宣传）限时特惠！全新热卖商品，厂家直发，超低价格等你来抢！！!!!!!!!", "tags": ["拼多多", "祛斑美白"], "video": "https://www.douyin.com/video/7696729320965868843", "land": "https://w3.muchengine.com/xx.html?id=1791979771720&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&cl=1791979792222_6aa9agqt&promotionid=__PROMOTION_ID__"}, {"cat": 1, "plat": "pdd", "img": "p14.jpg", "title": "菁纯秘密377 877美白去斑紫色皇冠素颜霜净C", "quote": "这款产品，我们用心打造，助你解决日常小烦恼", "tags": ["拼多多", "祛斑美白"], "video": "https://www.douyin.com/video/7696558585228201243", "land": "https://kd.motou.cc/landing/page/20261014150531647?cidname=clickid&aid=__ADVERTISER_ID__&adid=__PROMOTION_ID__&track_id=__REQID__&click_time=__TS__&clickid=__CLICKID__&ext=%7B%22adid_name%22%3A%22__AID_NAME__%22%2C%22group_id%22%3A%22__CAMPAIGN_ID__%22%2C%22group_name%22%3A%22__CAMPAIGN_NAME__%22%2C%22creative_id%22%3A%22__CID__%22%2C%22project_id%22%3A%22__PROJECT_ID__%22%2C%22promotion_id%22%3A%22__PROMOTION_ID__%22%2C%22csite%22%3A%22__CSITE__%22%2C%22ip%22%3A%22__IP__%22%2C%22request_id%22%3A%22__REQUEST_ID__%22%2C%22mid1%22%3A%22__MID1__%22%2C%22mid2%22%3A%22__MID2__%22%2C%22mid3%22%3A%22__MID3__%22%2C%22mid4%22%3A%22__MID4__%22%2C%22mid5%22%3A%22__MID5__%22%2C%22mid6%22%3A%22__MID6__%22%2C%22convert_id%22%3A%22__CONVERT_ID__%22%2C%22os%22%3A%22__OS__%22%2C%22ua%22%3A%22__UA__%22%2C%22ts%22%3A%22__TS__%22%2C%22model%22%3A%22__MODEL__%22%2C%22track_id%22%3A%22__TRACK_ID__%22%7D&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__"}, {"cat": 1, "plat": "pdd", "img": "p15.jpg", "title": "【淡斑 美白】植物大师美白祛斑精华液377淡斑美白紧致温和74,【淡斑 美白】植物大师美白祛斑精华液377淡斑美白紧致温和97,【淡斑 美白】植物大师美白祛斑精华液377淡斑美白紧致温和93,【淡斑 美白】植物大师美白祛斑精华液377淡斑美白紧致温和76,【淡斑 美白】植物大师美白祛斑精华液377淡斑美白紧致温和46", "quote": "长斑的姐妹不要慌，咱们还可以白到反光，快试试这个#淡斑美白", "tags": ["拼多多", "祛斑美白", "🏷️ 植物大师", "🔁 5 条→1 款"], "video": "https://www.douyin.com/video/7694399588123315510", "land": "https://daqi2.dqapi.cn/order/Common/site/5b595230?channel=1&linkid=3990168464829797&siteid=0&promotionid=__PROMOTION_ID__&rid=__REQUEST_ID__&ip=__IP__&ipv4=__IPV4__&model=__MODEL__&adid=__AID__&ad_name=__PROMOTION_NAME__&creativeid=__CID__&creativetype=__CTYPE__&clickid=__CLICKID__&avid=__ADVERTISER_ID__&trackid=__TRACK_ID__&csite=__CSITE__&ua=__UA__&geo=__GEO__&unionSite=__UNION_SITE__&mid3=__MID3__&prid=__PROJECT_ID__&ref=5b595230&projectid=__PROJECT_ID__"}, {"cat": 1, "plat": "pdd", "img": "p16.jpg", "title": "【200g大容量】美白祛斑抗皱霜淡纹补水保湿八效合一", "quote": "护肤 真的很简单啊 每天洗完脸涂一层这款", "tags": ["拼多多", "祛斑美白"], "video": "https://www.douyin.com/video/7687336975795342638", "land": "https://w3.muchengine.com/xx.html?id=1789736710484&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__"}, {"cat": 1, "plat": "pdd", "img": "p17.jpg", "title": "【淡斑 抗皱 美白】植物大师光感美白祛斑霜377淡斑美白祛斑霜75,【淡斑 抗皱 美白】植物大师光感美白祛斑霜377淡斑美白祛斑霜78,【淡斑 抗皱 美白】植物大师光感美白祛斑霜377淡斑美白祛斑霜71,【淡斑 抗皱 美白】植物大师光感美白祛斑霜377淡斑美白祛斑霜90,【淡斑 抗皱 美白】植物大师光感美白祛斑霜377淡斑美白祛斑霜80", "quote": "每天早晚抹一抹，皮肤暗黄，脸上有斑斑点点的姐妹们快一起来用，真的便宜又好用", "tags": ["拼多多", "祛斑美白", "🏷️ 植物大师"], "video": "https://www.douyin.com/video/7696560081730768191", "land": "https://daqi2.dqapi.cn/order/Common/site/0?channel=1&linkid=3891777272680714&siteid=0&promotionid=__PROMOTION_ID__&rid=__REQUEST_ID__&ip=__IP__&ipv4=__IPV4__&model=__MODEL__&adid=__AID__&ad_name=__PROMOTION_NAME__&creativeid=__CID__&creativetype=__CTYPE__&clickid=__CLICKID__&avid=__ADVERTISER_ID__&trackid=__TRACK_ID__&csite=__CSITE__&ua=__UA__&geo=__GEO__&unionSite=__UNION_SITE__&mid3=__MID3__&prid=__PROJECT_ID__&ref=0&projectid=__PROJECT_ID__"}, {"cat": 1, "plat": "pdd", "img": "p18.jpg", "title": "美白抗皱亮肤贵妇膏保湿身体护理膏精华霜补水紧致滋润素颜精华", "quote": "（拒绝虚假宣传）官方正品，拒绝虚假，不满意空盒也给退！", "tags": ["拼多多", "祛斑美白"], "video": "https://www.douyin.com/video/7696380440009051434", "land": "https://w3.muchengine.com/xx.html?id=1791948550271&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__"}, {"cat": 1, "plat": "jd", "img": "p19.jpg", "title": "【拍一发二 200g大容量】美白祛斑霜补水保湿提亮肤色滋润保湿JS", "quote": "长#斑点的妈妈们，就用#祛斑精华，30岁40岁50岁60岁！早晚抹一抹#淡斑#护肤#抗皱", "tags": ["京东", "祛斑美白", "5 款爆品"], "video": "https://www.douyin.com/video/7696352860400913673", "land": "https://item.jd.com/10237362281424.html?sdx=ehi-lLxFuZiE6JnKYoRfisQiuDGVCg8rsmhEs6xAZ9mLPe_RLJRd7nvtoU3nXmOZ&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__&clickid=__CLICKID__"}, {"cat": 2, "plat": "pdd", "img": "p20.jpg", "title": "芭奢鎏金奢宠草本抗皱眼霜淡化鱼尾纹细纹黑眼圈水润保湿滋润W", "quote": "（拒绝虚假宣传）限时特惠！全新热卖商品，厂家直发，超低价格等你来抢！", "tags": ["拼多多", "眼部护理"], "video": "https://www.douyin.com/video/7696738261284179236", "land": "https://kd.paiwan.com/landing/page/20261015194227730?cidname=clickid&aid=__ADVERTISER_ID__&adid=__PROMOTION_ID__&track_id=__REQID__&click_time=__TS__&clickid=__CLICKID__&ext=%7B%22adid_name%22%3A%22__AID_NAME__%22%2C%22group_id%22%3A%22__CAMPAIGN_ID__%22%2C%22group_name%22%3A%22__CAMPAIGN_NAME__%22%2C%22creative_id%22%3A%22__CID__%22%2C%22project_id%22%3A%22__PROJECT_ID__%22%2C%22promotion_id%22%3A%22__PROMOTION_ID__%22%2C%22csite%22%3A%22__CSITE__%22%2C%22ip%22%3A%22__IP__%22%2C%22request_id%22%3A%22__REQUEST_ID__%22%2C%22mid1%22%3A%22__MID1__%22%2C%22mid2%22%3A%22__MID2__%22%2C%22mid3%22%3A%22__MID3__%22%2C%22mid4%22%3A%22__MID4__%22%2C%22mid5%22%3A%22__MID5__%22%2C%22mid6%22%3A%22__MID6__%22%2C%22convert_id%22%3A%22__CONVERT_ID__%22%2C%22os%22%3A%22__OS__%22%2C%22ua%22%3A%22__UA__%22%2C%22ts%22%3A%22__TS__%22%2C%22model%22%3A%22__MODEL__%22%2C%22track_id%22%3A%22__TRACK_ID__%22%7D&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__"}, {"cat": 2, "plat": "pdd", "img": "p21.jpg", "title": "【拍一发三】 黄芪虫草精华眼霜淡纹抗皱紧致改善细纹黑眼圈PP1-", "quote": "（虚假宣传）官方正品，拒绝虚假，不满意直接退！", "tags": ["拼多多", "眼部护理", "🔁 2 条→1 款"], "video": "https://www.douyin.com/video/7696697219222687026", "land": "https://cid-landpage.smallfighter.com/v2/page/561/561279aa9b7c0fefc9434787cbc223a9/?rqid=__TRACK_ID__&advid=__ADVERTISER_ID__&csite=__CSITE__&mid3=__MID3__&clickid=__CLICKID__&promotionid=__PROMOTION_ID__&projectid=__PROJECT_ID__&creativetype=__CTYPE__"}, {"cat": 2, "plat": "pdd", "img": "p22.jpg", "title": "【抗皱紧致】植物大师抗皱提拉紧致精华油保湿官方正品03", "quote": "这个抗皱眼油老公拦着也要买！太好用了，淡化皱纹，提亮肤色！", "tags": ["拼多多", "眼部护理", "🏷️ 植物大师"], "video": "https://www.douyin.com/video/7694510101884964115", "land": "https://daqi2.dqapi.cn/order/Common/site/0?channel=1&linkid=2591910199639526&siteid=0&promotionid=__PROMOTION_ID__&rid=__REQUEST_ID__&ip=__IP__&ipv4=__IPV4__&model=__MODEL__&adid=__AID__&ad_name=__PROMOTION_NAME__&creativeid=__CID__&creativetype=__CTYPE__&clickid=__CLICKID__&avid=__ADVERTISER_ID__&trackid=__TRACK_ID__&csite=__CSITE__&ua=__UA__&geo=__GEO__&unionSite=__UNION_SITE__&mid3=__MID3__&prid=__PROJECT_ID__&ref=0&projectid=__PROJECT_ID__"}, {"cat": 2, "plat": "jd", "img": "p23.jpg", "title": "新蛇毒肽精华紧致眼膜贴去眼袋淡化眼周细纹补水保湿F1", "quote": "商品促销，下单闪电发货", "tags": ["京东", "眼部护理"], "video": "https://www.douyin.com/video/7695475257037098278", "land": "https://item.jd.com/10237050285905.html?sdx=ehi-lLxFuZiE6JnKYoRcicYiuDWYCA4rsmpIsaZAZtyLd9OgKppV53jmpErmUWOV8A&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__&clickid=__CLICKID__"}, {"cat": 2, "plat": "pdd", "img": "p24.jpg", "title": "【6支】眼霜淡化改善眼部细纹舒缓疲劳紧致抗皱肌肤眼霜-H,【6支】眼霜淡化改善细纹舒缓疲劳紧致抗皱肌肤眼霜-H", "quote": "（拒绝虚假宣传）官方正品，拒绝虚假，不满意空盒也给退！", "tags": ["拼多多", "眼部护理", "3 款爆品"], "video": "https://www.douyin.com/video/7693226525352529171", "land": "https://cid-landpage.smallfighter.com/v2/page/27b/27b8922316f4bb0690adb13ae1f891c2/?rqid=__TRACK_ID__&advid=__ADVERTISER_ID__&csite=__CSITE__&mid3=__MID3__&clickid=__CLICKID__&promotionid=__PROMOTION_ID__&projectid=__PROJECT_ID__&creativetype=__CTYPE__"}, {"cat": 3, "plat": "pdd", "img": "p25.jpg", "title": "【拍一发二】蔚蓝大地香水男士古龙香水持久留香淡香中性", "quote": "百元价位的暧昧男香，打开了她的嗅觉记忆，让气氛迅速升温# 蔚蓝 # 男士香水 # 蔚蓝男士香水", "tags": ["拼多多", "香水/香膏", "🏷️ 蔚蓝男士香水"], "video": "https://www.douyin.com/video/7696579587483946266", "land": "https://w3.muchengine.com/xx.html?id=1791625991181&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__"}, {"cat": 3, "plat": "pdd", "img": "p26.jpg", "title": "【专属男香】魅惑型相思雨男士香水持久留香淡雅清新男人味", "quote": "重要的不是礼物是浪漫，是生活中处处的小惊喜，是牵挂 ，是被爱 ，是有幸成为例外 #送女友礼物推荐", "tags": ["拼多多", "香水/香膏"], "video": "https://www.douyin.com/video/7696376068726476073", "land": "https://w3.muchengine.com/xx.html?id=1791617051872&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__"}, {"cat": 3, "plat": "pdd", "img": "p27.jpg", "title": "法式花香调温柔治愈香水持久留香优雅女人味日常通勤必备", "quote": "做一个精致女人，懂生活，花小钱办大事现在真的很便宜", "tags": ["拼多多", "香水/香膏", "2 款爆品"], "video": "https://www.douyin.com/video/7696573817077976339", "land": "https://w3.muchengine.com/xx.html?id=1791949606591&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__"}, {"cat": 4, "plat": "pdd", "img": "p28.jpg", "title": "【拍一发二】变色润唇膏不掉色不沾杯保湿滋润防干裂", "quote": "颜值超高的唇膏，孕妇宝妈都能用的变色唇膏！口红唇膏一支搞定！不易掉色不易沾杯，显白又好看#不沾杯口红", "tags": ["拼多多", "唇部彩妆", "🏷️ 韩泊莉变色唇膏"], "video": "https://www.douyin.com/video/7696812151754722611", "land": "https://w3.muchengine.com/xx.html?id=1791623986915&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__"}, {"cat": 4, "plat": "pdd", "img": "p29.jpg", "title": "【香槟新色】固体唇蜜口红不沾杯裸色时髦女生唇釉润唇燕麦格雷", "quote": "请大数据把这条视频推给你的姐妹，速来！#固体唇嘧！！！", "tags": ["拼多多", "唇部彩妆", "2 款爆品"], "video": "https://www.douyin.com/video/7696721261786942746", "land": "https://w3.muchengine.com/xx.html?id=1791985930136&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&cl=1792050040671_rvzssynl&promotionid=__PROMOTION_ID__"}, {"cat": 5, "plat": "jd", "img": "p30.jpg", "title": "【拍一发二】冬虫夏草精华素颜贵妇膏抗皱提亮自然遮瑕服帖焕亮", "quote": "#视频同款商品", "tags": ["京东", "面部彩妆", "🔁 6 条→1 款"], "video": "https://www.douyin.com/video/7696597105116302635", "land": "https://item.jd.com/10237352572520.html?sdx=ehi-lLxFuZiE6JnKYoRficQltzKUCgsrsmpKtKtDYd6NcNOgKppV53vtrU7mVGeY8A&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__&clickid=__CLICKID__"}, {"cat": 5, "plat": "pdd", "img": "p31.jpg", "title": "BRH遮瑕粉底棒水润控油提亮持妆打底不脱妆不暗沉持久水润质地", "quote": "美丽的小姐姐小哥哥们都爱用的变美单品，你知道吗？", "tags": ["拼多多", "面部彩妆", "1 款爆品"], "video": "https://www.douyin.com/video/7696866405991337259", "land": "https://w3.muchengine.com/xx.html?id=1791909369751&adid=__PROMOTION_ID__&ad_name=__PROMOTION_NAME__&creativetype=__CTYPE__&clickid=__CLICKID__&advertiser_id=__ADVERTISER_ID__&CSITE=__CSITE__&ip=__IP__&GEO=__GEO__&androidId=__ANDROIDID__&IDFA=__IDFA__&callback=__CALLBACK_URL____TS____MODEL__&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__"}, {"cat": 6, "plat": "jd", "img": "p32.jpg", "title": "【正品】四叉水眉笔防水持久不脱色自然眉笔画眉神器根根分明", "quote": "#视频同款商品", "tags": ["京东", "眼部彩妆", "1 款爆品"], "video": "https://www.douyin.com/video/7696912303878327588", "land": "https://item.jd.com/10237085971526.html?sdx=ehi-lLxFuZiE6JnKYoRchMMptzGUCg0rsmlIsqhAZtyLddOgKppV53vspkjqUWeX8w&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__&clickid=__CLICKID__"}, {"cat": 7, "plat": "pdd", "img": "p33.jpg", "title": "大眼神器双眼皮贴定型霜胶水蕾丝双面隐形自然持久双眼皮霜学生W", "quote": "（拒绝虚假宣传）限时特惠！全新热卖商品，厂家直发，超低价格等你来抢！", "tags": ["拼多多", "面部美容工具"], "video": "https://www.douyin.com/video/7696575168834981130", "land": "https://kd.paiwan.com/landing/page/20261015165947242?cidname=clickid&aid=__ADVERTISER_ID__&adid=__PROMOTION_ID__&track_id=__REQID__&click_time=__TS__&clickid=__CLICKID__&ext=%7B%22adid_name%22%3A%22__AID_NAME__%22%2C%22group_id%22%3A%22__CAMPAIGN_ID__%22%2C%22group_name%22%3A%22__CAMPAIGN_NAME__%22%2C%22creative_id%22%3A%22__CID__%22%2C%22project_id%22%3A%22__PROJECT_ID__%22%2C%22promotion_id%22%3A%22__PROMOTION_ID__%22%2C%22csite%22%3A%22__CSITE__%22%2C%22ip%22%3A%22__IP__%22%2C%22request_id%22%3A%22__REQUEST_ID__%22%2C%22mid1%22%3A%22__MID1__%22%2C%22mid2%22%3A%22__MID2__%22%2C%22mid3%22%3A%22__MID3__%22%2C%22mid4%22%3A%22__MID4__%22%2C%22mid5%22%3A%22__MID5__%22%2C%22mid6%22%3A%22__MID6__%22%2C%22convert_id%22%3A%22__CONVERT_ID__%22%2C%22os%22%3A%22__OS__%22%2C%22ua%22%3A%22__UA__%22%2C%22ts%22%3A%22__TS__%22%2C%22model%22%3A%22__MODEL__%22%2C%22track_id%22%3A%22__TRACK_ID__%22%7D&projectid=__PROJECT_ID__&promotionid=__PROMOTION_ID__&creativetype=__CTYPE__"}], "merges": [{"name": "冬虫夏草精华素颜贵妇膏", "n": 6, "to": 1, "src": "京东 4 / 拼多多 2"}, {"name": "植物大师 · 377 美白祛斑精华液", "n": 5, "to": 1, "src": "拼多多 5"}, {"name": "植物大师 · PDRN 白桦树汁精华液", "n": 4, "to": 1, "src": "拼多多 4"}, {"name": "银耳珍珠滋养霜", "n": 4, "to": 1, "src": "拼多多 4"}, {"name": "雅屏 · 黄芪虫草精华眼霜", "n": 2, "to": 1, "src": "拼多多 2"}, {"name": "美白祛斑养肤贵妇膏", "n": 2, "to": 1, "src": "拼多多 2"}], "total": 34};
-/* 托管沙箱对子资源同样校验 sharecode，图片 src 必须带上当前页面的 query */
-var QS = (typeof location !== 'undefined' && location.search) ? location.search : '';
-var cats = D.cats, prods = D.products;
-var selCats = [], selPlat = 'all', kw = '';
-
-document.getElementById('updTag').textContent = D.updateDate || '—';
-document.getElementById('upd2').textContent = D.updateDate || '—';
-
-/* 概览 */
-var pdd = prods.filter(function(p){return p.plat==='pdd';}).length;
-var jd  = prods.length - pdd;
-var top = cats.slice().sort(function(a,b){return b.n-a.n;})[0];
-var merged = D.merges.reduce(function(s,m){return s + (m.n - m.to);}, 0);
-var stats = [
-  ['💄','爆品总数（去重后）', D.total, '款', '合并前 ' + (D.total + merged) + ' 款 · 已合并 ' + merged + ' 条'],
-  ['🗂️','覆盖类目', cats.length, '个', '二级类目 · ' + cats.length + ' 个三级类目'],
-  ['🛒','引流平台', '拼多多 ' + pdd + ' / 京东 ' + jd, '', '按落地页归属统计'],
-  ['🏆','TOP1 类目', top.name, '', top.n + ' 款 · 占比 ' + top.pct + '%']
-];
-document.getElementById('stats').innerHTML = stats.map(function(s){
-  return '<div class="stat"><div class="ic">'+s[0]+'</div><div><div class="lb">'+s[1]+'</div>'+
-         '<div class="vl">'+s[2]+(s[3]?'<small>'+s[3]+'</small>':'')+'</div>'+
-         '<div class="ex">'+s[4]+'</div></div></div>';
-}).join('');
-
-/* 类目卡 */
-var maxN = Math.max.apply(null, cats.map(function(c){return c.n;}));
-function renderDists(){
-  document.getElementById('dists').innerHTML = cats.map(function(c,i){
-    return '<div class="dist'+(selCats.indexOf(i)>=0?' on':'')+'" data-i="'+i+'">'+
-      '<div class="em">'+c.emoji+'</div><div class="nm">'+c.name+'</div>'+
-      '<div class="nu">'+c.n+'<i>款</i>'+c.pct+'%</div>'+
-      '<div class="bar"><i style="width:'+(c.n/maxN*100).toFixed(0)+'%"></i></div></div>';
-  }).join('');
-  var els = document.querySelectorAll('.dist');
-  for (var i=0;i<els.length;i++){
-    (function(i){ els[i].onclick = function(){
-      var k = selCats.indexOf(i);
-      if (k >= 0) selCats.splice(k,1); else selCats.push(i);
-      renderDists(); renderGrid();
-    }; })(i);
-  }
-  document.getElementById('catCnt').textContent = selCats.length ? ('已选 ' + selCats.length + ' 个类目') : '';
-}
-
-/* 平台 tab */
-var plats = [['all','全部'],['pdd','拼多多'],['jd','京东']];
-function renderPlats(){
-  document.getElementById('platTabs').innerHTML = plats.map(function(p){
-    return '<button class="ftab'+(selPlat===p[0]?' on':'')+'" data-p="'+p[0]+'">'+p[1]+'</button>';
-  }).join('');
-  var els = document.querySelectorAll('#platTabs .ftab');
-  for (var i=0;i<els.length;i++){
-    (function(i){ els[i].onclick = function(){ selPlat = els[i].getAttribute('data-p'); renderPlats(); renderGrid(); }; })(i);
-  }
-}
-
-/* 商品网格 */
-function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function renderGrid(){
-  var list = prods.filter(function(p){
-    if (selCats.length && selCats.indexOf(p.cat) < 0) return false;
-    if (selPlat !== 'all' && p.plat !== selPlat) return false;
-    if (kw){
-      var hay = (p.title + ' ' + p.tags.join(' ') + ' ' + cats[p.cat].name).toLowerCase();
-      if (hay.indexOf(kw.toLowerCase()) < 0) return false;
-    }
-    return true;
+var M=[{"subs": ["长青品", "应季品"]}, {"subs": ["已投爆品", "新机会品"]}], cur={};
+function go(mi,si){
+  if(si===undefined) si=cur[mi]||0;
+  cur[mi]=si;
+  document.querySelectorAll('.l1b').forEach(function(b,i){b.classList.toggle('on',i===mi)});
+  M.forEach(function(mm,j){
+    var p=document.getElementById('p'+j); if(p)p.classList.toggle('on',j===mi);
+    mm.subs.forEach(function(s,k){
+      var el=document.getElementById('s'+j+'_'+k); if(el)el.style.display=(j===mi&&k===si)?'block':'none';
+      var b=document.getElementById('b'+j+'_'+k); if(b)b.classList.toggle('on',k===si);
+    });
   });
-  document.getElementById('resCnt').textContent = '共 ' + list.length + ' 款';
-  document.getElementById('grid').innerHTML = list.length ? list.map(function(p, ri){
-    var tg = p.tags.map(function(t){
-      var cls = 'tg-cat';
-      if (t.indexOf('拼多多')===0) cls='tg-pdd';
-      else if (t.indexOf('京东')===0) cls='tg-jd';
-      else if (t.indexOf('🏷️')===0) cls='tg-brand';
-      else if (t.indexOf('🔁')===0) cls='tg-merge';
-      return '<span class="tg '+cls+'">'+esc(t)+'</span>';
-    }).join('');
-    /* 图片走独立文件 + 懒加载：首屏不等待图片，移动端秒开 */
-    var img = p.img
-      ? '<img class="img" src="pic/'+p.img+QS+'" alt="商品主图" width="118" height="118" '+
-        (ri < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"')+
-        ' decoding="async" onclick="zoom(this.src)" '+
-        'onerror="this.style.display=\'none\'">'
-      : '<div class="noimg"><span style="font-size:26px">💄</span>NO IMAGE</div>';
-    return '<div class="pcard">'+img+'<div class="body">'+
-      '<div><div class="tags">'+tg+'</div><div class="ptitle" title="'+esc(p.title)+'">'+esc(p.title)+'</div></div>'+
-      (p.quote ? '<div class="pquote" title="'+esc(p.quote)+'">'+esc(p.quote)+'</div>' : '')+
-      '<div class="btns">'+
-        (p.video ? '<a class="btn btn-v" href="'+p.video+'" target="_blank" rel="noopener">🎬 播放视频</a>' : '')+
-        (p.land  ? '<a class="btn btn-l" href="'+p.land+'" target="_blank" rel="noopener">🔗 直达链路</a>' : '')+
-      '</div></div></div>';
-  }).join('') : '<div class="empty">没有符合条件的爆品，试试取消筛选或换个关键词</div>';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function zoom(src){
-  document.getElementById('modalImg').src = src;
-  document.getElementById('modal').classList.add('on');
-}
-
-/* 合并明细 */
-document.getElementById('merges').innerHTML = D.merges.map(function(m){
-  return '<span class="mg">'+esc(m.name)+' <b>'+m.n+'</b> → <b>'+m.to+'</b> <i>('+esc(m.src)+')</i></span>';
-}).join('') || '<span class="mg">本次无合并</span>';
-
-document.getElementById('search').oninput = function(e){ kw = e.target.value.trim(); renderGrid(); };
-
-renderDists(); renderPlats(); renderGrid();
-</script>
-</body>
-</html>
+function zoom(s){document.getElementById('mbi').src=s;document.getElementById('mb').classList.add('on')}
+</script></body></html>
